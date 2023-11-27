@@ -3,6 +3,7 @@ import { FlatList, View, StyleSheet, Text, Alert, TouchableWithoutFeedback, Keyb
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
 import AddTodo from './components/AddTodo';
+import Sandbox from './components/Sandbox';
 
 export default function Latihan3() {
 
@@ -29,15 +30,15 @@ export default function Latihan3() {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View>
+            <View style={styles.container}>
                 
                 <Header/>
 
-                <View styles={styles.content}>
+                <View style={styles.content}>
 
                     <AddTodo submitHandler={submitHandler}/>
 
-                    <View styles={styles.list}>
+                    <View style={styles.list}>
                         <FlatList
                             keyExtractor={item => item.id}
                             data={todos}
@@ -53,10 +54,16 @@ export default function Latihan3() {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
     content: {
         padding: 40,
+        flex: 1,
     },
     list: {
         marginTop: 20,
+        // flex: 1,
     },
 })

@@ -8,6 +8,7 @@ import Latihan1 from './Latihan1';
 import Latihan2 from './Latihan2';
 import Latihan3 from './Latihan3';
 import { useCallback, useState } from 'react';
+import Sandbox from './components/Sandbox';
 
 export default function App() {
   
@@ -21,17 +22,17 @@ export default function App() {
   }, []);
 
   return (
-    <View style={styles.container}>
-       <View
-        contentContainerStyle={styles.scrollView}
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }>
-          {/* <Latihan1/> */}
-          {/* <Latihan2/> */}
+    // <View style={styles.container}>
+    //    <View
+    //     contentContainerStyle={styles.scrollView}
+    //     refreshControl={
+    //       <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+    //     }>
+    //       <Latihan1/>
+    //       <Latihan2/>
+    //   </View>
+    // </View>
           <Latihan3/>
-      </View>
-    </View>
   );
 }
 
