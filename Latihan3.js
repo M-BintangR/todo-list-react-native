@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FlatList, View, StyleSheet, Text } from 'react-native'
+import { FlatList, View, StyleSheet, Text, Alert } from 'react-native'
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
 import AddTodo from './components/AddTodo';
@@ -18,7 +18,11 @@ export default function Latihan3() {
     }
 
     const submitHandler = (text) => {
-        setTodos((prev) => [{text: text, id: Math.random().toString() }, ...prev]);
+        if(text){
+            setTodos((prev) => [{text: text, id: Math.random().toString() }, ...prev]);
+        }
+
+        Alert.alert('Gagal.', 'isi data terlebih dahulu');
     }
 
     return (
